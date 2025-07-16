@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this, NumbersViewModelFactory())[NumbersViewModel::class.java]
 
+        //ignore section
         lifecycleScope.launchWhenStarted {
             viewModel.uiState.collect { state ->
                 firstNumber.setText(state.run { numberPair.first.toString() })
